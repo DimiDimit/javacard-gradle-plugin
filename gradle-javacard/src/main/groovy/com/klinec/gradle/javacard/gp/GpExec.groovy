@@ -32,7 +32,7 @@ import org.gradle.api.tasks.JavaExec
  */
 class GpExec extends JavaExec {
 
-    static String GP_CLASSNAME = 'pro.javacard.gp.GPTool'
+    static String GP_CLASSNAME = 'pro.javacard.gptool.GPTool'
 
     GpExec() {
         super()
