@@ -3,17 +3,17 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.3'
+        //classpath 'org.kt3k.gradle.plugin:coveralls-gradle-plugin:2.8.3'
         classpath 'org.jacoco:org.jacoco.core:0.8.5'
         classpath 'com.github.dcendents:android-maven-gradle-plugin:1.4.1'
-        classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
+        //classpath 'com.jfrog.bintray.gradle:gradle-bintray-plugin:1.0'
     }
 }
 
 allprojects {
     apply plugin: 'base'
     apply plugin: 'jacoco'
-    apply plugin: 'com.github.kt3k.coveralls'
+    //apply plugin: 'com.github.kt3k.coveralls'
     apply plugin: 'groovy'
 
     repositories {
