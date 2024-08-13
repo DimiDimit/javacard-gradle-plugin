@@ -356,7 +356,7 @@ class JavaCardPlugin implements Plugin<Project> {
             capItem.applets.eachWithIndex { Applet appletItem, int idx ->
                 def lstCls = appletItem.className.split("\\.").last().capitalize()
                 def taskName = "${DELETE_TASK}Package${String.format("%02d", capIdx)}Applet${String.format("%02d", idx)}$lstCls"
-                def tmpArgs = ["--delete", appletItem.aid]
+                def tmpArgs = ["--delete", appletItem.aid.replace(":", "")]
                 def taskDesc = "Removes applet \"${appletItem.className}\" (${appletItem.aid}) from the card"
                 curDelTasksSpecs.add(new Tuple3(taskName, tmpArgs, taskDesc))
             }
@@ -365,7 +365,7 @@ class JavaCardPlugin implements Plugin<Project> {
             def pkgAbrev = capItem.packageName.split("\\.").last().capitalize()
             curDelTasksSpecs.add(new Tuple3(
                     "${DELETE_TASK}Package${String.format("%02d", capIdx)}$pkgAbrev",
-                    ["--delete", capItem.aid],
+                    ["--delete", capItem.aid.replace(":", "")],
                     "Removes package \"${capItem.packageName}\" (${capItem.aid}) from the card"))
 
             // Create tasks from specs, the last one if package del
